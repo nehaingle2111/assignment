@@ -37,6 +37,8 @@ public class PostController {
     	 LOGGER.error("in getAllPost a postcontroller");
     	 LOGGER.info("in getAllPost a postcontroller");
       	 LOGGER.warn("in getAllPost a postcontroller");
+      	 
+      	 System.out.println("Test");
     	 
         return postRepository.findAll(pageable);
     }
