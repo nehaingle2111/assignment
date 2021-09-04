@@ -6,6 +6,8 @@ import com.example.jpa.model.User;
 import com.example.jpa.repository.PostRepository;
 import com.example.jpa.repository.UserRepository;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -24,9 +26,18 @@ public class PostController {
     
     @Autowired
 	private UserRepository userRepository;
+    
+    //LOGGER
+    private static Logger LOGGER = LoggerFactory.getLogger(PostController.class);
 
     @GetMapping("/posts")
     public Page<Post> getAllPosts(Pageable pageable) {
+    	
+    	 LOGGER.debug("in getAllPost a postcontroller");
+    	 LOGGER.error("in getAllPost a postcontroller");
+    	 LOGGER.info("in getAllPost a postcontroller");
+      	 LOGGER.warn("in getAllPost a postcontroller");
+    	 
         return postRepository.findAll(pageable);
     }
 
